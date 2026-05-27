@@ -458,7 +458,7 @@
       svg.appendChild(el('text', { x: W / 2, y: 34, 'text-anchor': 'middle', fill: '#172033', 'font-size': 22, 'font-weight': 800 }, '制冰机 App 功能卡诺模型图'));
       svg.appendChild(el('text', { x: W / 2, y: H - 26, 'text-anchor': 'middle', fill: '#344054', 'font-size': 14, 'font-weight': 700 }, '缺失不满风险 / 基础必要性 →'));
 
-      const yTitle = el('text', { x: 25, y: H / 2, 'text-anchor': 'middle', fill: '#344054', 'font-size': 14, 'font-weight': 700, transform: `rotate(-90 25 ${H / 2})` }, '满意度提升潜力 →');
+      const yTitle = el('text', { x: 25, y: H / 2, 'text-anchor': 'middle', fill: '#344054', 'font-size': 14, 'font-weight': 700, transform: rotate(-90 25 ${H / 2}) }, '满意度提升潜力 →');
       svg.appendChild(yTitle);
 
       const zoneLabels = [
@@ -491,12 +491,7 @@
       const pointerX = event.clientX || window.innerWidth / 2;
       const pointerY = event.clientY || window.innerHeight / 2;
       const zone = getZoneByScore(item.x, item.y);
-      tooltip.innerHTML = `
-        <strong>${item.name}</strong>
-        <div>坐标判定：${zone.label}</div>
-        <div>横坐标：${item.x} / 纵坐标：${item.y}</div>
-        <small>${item.value}</small>
-      `;
+      tooltip.innerHTML =         <strong>${item.name}</strong>         <div>坐标判定：${zone.label}</div>         <div>横坐标：${item.x} / 纵坐标：${item.y}</div>         <small>${item.value}</small>      ;
       tooltip.style.left = pointerX + 'px';
       tooltip.style.top = pointerY + 'px';
       tooltip.style.opacity = '1';
